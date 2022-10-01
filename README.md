@@ -1,7 +1,6 @@
-# employee
+# Site Scrapper Symfony
 =======
-employee
-==========
+Site Scrapper Symfony
 
 Symfony project 5.4
 -------------------
@@ -10,7 +9,7 @@ Symfony project 5.4
 
 * Git clone
 ``` bash
-$ git clone https://github.com/kailashkds/employee.git
+$ git clone https://github.com/kailashkds/site-scrapper-symfony.git
 ```
   * **NOTE**
     Before moving further we need to have docker and docker-compose installed on your pc. Kindly Google for it.
