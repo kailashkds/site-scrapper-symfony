@@ -1,6 +1,4 @@
 # Site Scrapper Symfony
-=======
-Site Scrapper Symfony
 
 Symfony project 5.4
 -------------------
