@@ -1,0 +1,28 @@
+{% extends 'base-front.html.twig' %}
+
+{% block title %}Home!{% endblock %}
+
+{% block body %}
+
+    <div class="row news-body">
+        <hr>
+        <div class="col-md-12 center-news">
+            {% for newspost in news %}
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <h2>This is a test </h2>
+                        <span class="description">Updated At - 7:30 PM Today</span>
+                    </div>
+                    <img class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User Image">
+                    <div class="box-tools">
+                        <p>This is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a description</p>
+                    </div>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-12 center-news">
+            {{ knp_pagination_render(news) }}
+        </div>
+    </div>
+{% endblock %}

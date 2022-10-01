@@ -1,0 +1,17 @@
+{% extends 'base-front.html.twig' %}
+
+{% block title %}News !{% endblock %}
+
+{% block body %}
+    <div class="row news-body">
+        <hr>
+        <div class="col-md-12 center-news">
+            {% for newspost in news %}
+                {% include 'home/news.html.twig' %}
+            {% endfor %}
+        </div>
+        <div class="center-news">
+            {{ knp_pagination_render(news) }}
+        </div>
+    </div>
+{% endblock %}

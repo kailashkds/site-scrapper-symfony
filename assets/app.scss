@@ -1,0 +1,51 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+
+.top-right{
+    padding-top: 20px; 
+    float: right;   
+}
+
+.container {
+    .news-body {
+        hr {
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .center-news {
+            margin: auto;
+            width: 80%;
+            padding: 10px; 
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+        }
+        .pagination {
+            padding-bottom: 20px;
+            span {
+                padding: 5px;
+
+                a {
+                    background: #0d6efd; 
+                    border-radius: 5px; 
+                    padding: 10px; 
+                    color: #ffffff;
+                }
+            }
+            .current {
+                background: #28a745; 
+                border-radius: 5px; 
+                padding: 10px; 
+                color: #ffffff;
+            }
+        }
+    }
+}
