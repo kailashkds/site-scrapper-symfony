@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Source index{% endblock %}
+
+{% block body %}
+    <h1>Source index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Url</th>
+                <th>Name</th>
+                <th>SourceTitle</th>
+                <th>SourceShortDescription</th>
+                <th>SourcePicture</th>
+                <th>SourceAddDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for source in sources %}
+            <tr>
+                <td>{{ source.id }}</td>
+                <td>{{ source.url }}</td>
+                <td>{{ source.name }}</td>
+                <td>{{ source.sourceTitle }}</td>
+                <td>{{ source.sourceShortDescription }}</td>
+                <td>{{ source.sourcePicture }}</td>
+                <td>{{ source.sourceAddDate }}</td>
+                <td>
+                    <a href="{{ path('app_source_show', {'id': source.id}) }}">show</a>
+                    <a href="{{ path('app_source_edit', {'id': source.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_source_new') }}">Create new</a>
+{% endblock %}

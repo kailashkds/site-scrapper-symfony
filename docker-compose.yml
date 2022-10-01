@@ -1,0 +1,44 @@
+version: '3'
+services:
+    apache:
+        build: docker/apache
+        container_name: sf5_apache
+        ports:
+          - 80:80
+        volumes:
+          - ./docker/apache/config/vhosts:/etc/apache2/sites-enabled
+          - .:/home/wwwroot/sf5
+        depends_on:
+          - php
+
+    mariadb:
+        image: mariadb:10.1
+        container_name: sf5_mariadb
+        volumes:
+            - mariadb:/var/lib/mysql
+        environment:
+            TZ: "Europe/Rome"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "rootpwd"
+            MYSQL_USER: 'testuser'
+            MYSQL_PASSWORD: 'testpassword'
+            MYSQL_DATABASE: 'testdb'
+
+    php:
+        build: docker/php
+        container_name: sf5_php
+        volumes:
+          - .:/home/wwwroot/sf5
+        depends_on:
+          - mariadb
+          - rabbitmq
+    rabbitmq:
+        image: rabbitmq:3.7-management
+        container_name: sf4_rabbitmq
+        ports: [5672, 15672]
+
+volumes:
+    mariadb:
+
+#docker exec -it -u www-data  sf5_php php sf5/stie/bin/console doctrine:database:create
+
